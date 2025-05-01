@@ -131,7 +131,7 @@ import numpy as np
 
 # Prepare features
 features = claims_df[['AMOUNT']]
-features.fillna(0, inplace=True)
+features.fillna(0, inplace=True
 
 clf = IsolationForest(contamination=0.01, random_state=42)
 claims_df['anomaly_score'] = clf.fit_predict(features)
@@ -196,9 +196,9 @@ plt.show()
 - Documentation & Code: Synthea documentation: https://github.com/synthetichealth/synthea/wiki
 
 
-License
+### License
 This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
 
-© Neural Nexus Team — All rights reserved.
+**© Neural Nexus Team** — All rights reserved.
 
 With love for healthcare data analysis and fraud detection.
