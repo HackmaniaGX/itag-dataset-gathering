@@ -20,7 +20,7 @@ Ensure you have the following installed:
 pip install pandas numpy matplotlib seaborn plotly scikit-learn
 ```
 
-Initializing the Notebook
+### Initializing the Notebook
 Clone or download this repository.
 
 Launch Jupyter Notebook in your project directory:
@@ -29,7 +29,8 @@ jupyter notebook
 ```
 Open the notebook **healthcare_fwa_analysis.ipynb**.
 
-Dataset Description
+### Dataset Description
+
 The datasets used include:
 
 - **Patients Data (patients.csv):** Demographics, medical history, and socioeconomic info.
@@ -42,7 +43,7 @@ The datasets used include:
 
 The datasets are synthetically generated and stored in CSV format, providing a realistic basis for analysis.
 
-Data Loading and Preprocessing
+## Data Loading and Preprocessing
 
 ```bash
 import pandas as pd
@@ -196,7 +197,8 @@ plt.show()
 
 
 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
 
-© Your Name or Organization — All rights reserved.
-Generated with love for healthcare data analysis and fraud detection.
+© Neural Nexus Team — All rights reserved.
+
+With love for healthcare data analysis and fraud detection.
