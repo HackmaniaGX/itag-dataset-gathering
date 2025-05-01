@@ -60,6 +60,14 @@ transactions_df['FROMDATE'] = pd.to_datetime(transactions_df['FROMDATE'], errors
 transactions_df['TODATE'] = pd.to_datetime(transactions_df['TODATE'], errors='coerce')
 ```
 
+## Data Merging
+
+```bash
+    # Merge
+    merged_df = claims_df.merge(transactions_df, on='CLAIMID', how='left')
+```
+
+
 ## Exploratory Data Analysis (EDA)
 
 ### 1. Patients Demographics
@@ -86,12 +94,12 @@ plt.show()
 
 ```bash
 # Claim amount distribution
-sns.boxplot(x=claims_df['AMOUNT'])
+sns.boxplot(x=merged_df['AMOUNT'])
 plt.title('Claim Amounts')
 plt.show()
 
 # Claims over Time
-claims_df['SERVICEDATE'].hist(bins=30)
+merged_df['SERVICEDATE'].hist(bins=30)
 plt.title('Claims Over Time')
 plt.show()
 ```
@@ -100,7 +108,7 @@ plt.show()
 
 ```bash
 # Top providers by number of claims
-provider_claim_counts = claims_df['PROVIDERID'].value_counts().head(10)
+provider_claim_counts = merged_df['PROVIDERID'].value_counts().head(10)
 provider_claim_counts.plot(kind='bar')
 plt.ylabel('Number of Claims')
 plt.title('Top 10 Providers by Claim Count')
@@ -113,13 +121,13 @@ plt.show()
 #### 1. Identify High-Value Claims
 
 ```bash
-high_claim_threshold = claims_df['AMOUNT'].quantile(0.99)
-suspicious_claims = claims_df[claims_df['AMOUNT'] > high_claim_threshold]
+high_claim_threshold = merged_df['AMOUNT'].quantile(0.99)
+suspicious_claims = merged_df[merged_df['AMOUNT'] > high_claim_threshold]
 ```
 
 #### 2. Detect Repetitive & Rapid Claims
 ```bash
-claims_df['DATE'] = claims_df['SERVICEDATE'].dt.date
+merged_df['DATE'] = merged_df['SERVICEDATE'].dt.date
 claims_per_provider_day = claims_df.groupby(['PROVIDERID', 'DATE']).size()
 suspicious_frequency = claims_per_provider_day[claims_per_provider_day > 10]
 ```
@@ -130,14 +138,14 @@ from sklearn.ensemble import IsolationForest
 import numpy as np
 
 # Prepare features
-features = claims_df[['AMOUNT']]
+features = merged_df[['AMOUNT']]
 features.fillna(0, inplace=True
 
 clf = IsolationForest(contamination=0.01, random_state=42)
-claims_df['anomaly_score'] = clf.fit_predict(features)
+merged_df['anomaly_score'] = clf.fit_predict(features)
 
 # Filter suspected fraudulent claims
-suspects = claims_df[claims_df['anomaly_score'] == -1]
+suspects = merged_df[merged_df['anomaly_score'] == -1]
 ```
 ### Visualization of Suspicious Activities
 
@@ -185,14 +193,12 @@ plt.show()
 
 
 ### References & Resources
-- Synthea: Synthetic Healthcare Data Generation
+- **Synthea:** Synthetic Healthcare Data Generation
     - Main GitHub repo: https://github.com/synthetichealth/synthea
     - International extension: https://github.com/synthetichealth/synthea-international
-
 - Generating Data for Ireland (IE):
     - Synthea can be customized for Ireland’s healthcare systems, demographics, and coding standards.
-
-- See README.md on respective repo for for setup instructions.
+- See **README.md** on respective repo for for setup instructions.
 - Documentation & Code: Synthea documentation: https://github.com/synthetichealth/synthea/wiki
 
 
