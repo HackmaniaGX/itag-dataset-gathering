@@ -1,5 +1,8 @@
 # Healthcare Claims & Patient Data Analysis for Fraud, Waste, and Abuse (FWA) Detection
 
+> **Note:**
+This repository contains notebooks and resources for analyzing Healthcare Fraud, Waste, and Abuse (FWA) using various approaches, including initial analysis, graph-based methods, and machine learning techniques.
+
 ## Introduction
 
 This project aims to analyze healthcare claims data to identify potential Fraud, Waste, and Abuse (FWA) patterns. Using synthetic datasets generated via Synthea, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
@@ -28,7 +31,7 @@ Effective detection helps prevent financial losses, ensures equitable resource d
 | Fraud   | Intentional deception for financial gain | Claims with false info or staging         | False claims, identity theft | Excessive claims, suspicious patterns    |
 | Waste   | Overutilization or misuse of resources   | Excessive billing, unnecessary procedures | Cost per patient/provider    | High expenses with no added value        |
 | Abuse   | Improper billing practices               | Upcoding, unbundling services             | Billing codes misuse         | Discrepancies between services and codes |
-|---------|------------------------------------------|-------------------------------------------|------------------------------|------------------------------------------|
+
 
 ### 2. Techniques & Code
 - **Outlier Detection** (e.g., Isolation Forest)
@@ -43,12 +46,77 @@ Effective detection helps prevent financial losses, ensures equitable resource d
 
 ## Getting Started
 
+### Overview
+
+The repository includes three main notebooks:
+
+- `healthcare_fwa_analysis.ipynb`  
+  Performs an initial analysis of healthcare claims data based on basic provider and patient network analysis.
+
+- `healthcare_fwa_graph_analysis.ipynb`  
+  Implements a graph-based approach as described in relevant research papers.
+
+- `healthcare_fwa_opt2_analysis.ipynb`  
+  Utilizes machine learning techniques to detect suspicious claims indicative of fraud or abuse.
+
+---
+
+Directory Structure
+```.
+├── notebooks/
+│   ├── healthcare_fwa_analysis.ipynb
+│   ├── healthcare_fwa_graph_analysis.ipynb
+│   └── healthcare_fwa_opt2_analysis.ipynb
+├── data/
+│   └── sample_data/
+│       └── csv/
+│           └── [county folders]
+├── containers/
+│   ├── Dockerfile
+│   └── other container configs
+├── requirements.txt
+└── README.md
+```
+
+### Datasets
+This project utilizes a **synthetic healthcare dataset** generated through the **Synthea** tool. Synthea is an open-source simulator designed to produce realistic, anonymized patient records based on population models. This approach enables scalable and privacy-preserving research and analysis.
+
+#### Why Use Synthetic Data?
+
+- **Privacy & Confidentiality:** Synthetic data circumvents privacy concerns associated with real patient records.
+- **Controlled Environment:** Facilitates testing, experimentation, and validation without risking sensitive information.
+- **Customizability:** Data can be tailored to specific scenarios, demographic distributions, or rare conditions, enhancing research flexibility.
+- **Resource Efficiency:** Eliminates the need for complex data access procedures and compliance hurdles.
+
+The datasets used include:
+
+- **Patients Data (patients.csv):** Demographics, medical history, and socioeconomic info.
+- **Claims Data (claims.csv):** Claims details such as amount, date, diagnoses, and provider.
+- **Claims Transactions (claims_transactions.csv):** Detailed transaction info linked to claims.
+- **Providers Data (providers.csv):** Provider specialties, locations, and contact info.
+
+The datasets are synthetically generated and stored in CSV format, providing a realistic basis for analysis.
+
+The datasets are stored in the following directory structure:
+
+```
+data/
+└── sample_data/
+    └── csv/
+        └── [county-specific folders]/
+            └── *.csv
+```
+Each folder contains CSV files specific to a county. (for e.g: galway, limerick, dublin, cork) 
+
+> **Warning:**
+Using Synthea-generated synthetic datasets enables safe and flexible healthcare data analysis. However, it is crucial to understand and account for the inherent biases to ensure meaningful and responsible insights.
+
+
 ### Prerequisites
 
 Ensure you have the following installed:
-- Google Cloud Platform account
-- Python 3.8+ environment
-- Google Cloud SDK installed
+- Google Cloud Platform account ( for using Vertex AI workbench to use these notebooks)
+- Python 3.8+ environment (if running notebooks directly)
 - Basic familiarity with Jupyter Notebooks
 
 #### Required Python packages:
@@ -57,28 +125,46 @@ Install the following packages within jupyter notebooks or python code.
 pip install pandas numpy matplotlib seaborn plotly scikit-learn
 ```
 
-### Initializing the Notebook
-Clone or download this repository.
+### Clone the repo
+```bash
+git clone https://github.com/HackmaniaGX/neural-nexus-healthcare-fwa-analysis.git
+cd neural-nexus-healthcare-fwa-analysis
+```
 
-Launch Jupyter Notebook in your project directory:
+### Set Up Environment
+#### Using Docker
+To build and run the container:
+```bash
+docker build -t healthcare-fwa .
+docker run -p 8888:8888 -v "$(pwd):/app" healthcare-fwa
+```
+
+This will start Jupyter Notebook server accessible at http://localhost:8888.
+
+#### Manual Setup
+Alternatively, set up a Python environment:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Running the Notebooks
+
+Launch Jupyter Notebook in project directory:
 ```bash
 jupyter notebook
 ```
-Open the notebook **healthcare_fwa_analysis.ipynb**.
+- Open the notebooks in the notebooks/ directory:
 
-### Dataset Description
+- Initial Analysis: Use **healthcare_fwa_analysis.ipynb**
 
-The datasets used include:
+- Graph-Based ML Analysis: **healthcare_fwa_graph_analysis.ipynb**
 
-- **Patients Data (patients.csv):** Demographics, medical history, and socioeconomic info.
+- ML-based Detection Algorithm: Use **healthcare_fwa_opt2_analysis.ipynb*
 
-- **Claims Data (claims.csv):** Claims details such as amount, date, diagnoses, and provider.
+> **Note**
+Update dataset paths if necessary to point to your local data folders.
 
-- **Claims Transactions (claims_transactions.csv):** Detailed transaction info linked to claims.
-
-- **Providers Data (providers.csv):** Provider specialties, locations, and contact info.
-
-The datasets are synthetically generated and stored in CSV format, providing a realistic basis for analysis.
 
 ## Data Loading and Preprocessing
 
