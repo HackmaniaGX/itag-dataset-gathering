@@ -1,0 +1,20 @@
+# Ignore version control systems
+.git
+_archive
+
+# Ignore Anaconda projects directory
+anaconda_projects
+containers
+
+# Ignore non essential data 
+# Adjust to include accordingly
+data/sample_data/csv/dublin
+data/sample_data/csv/limerick 
+
+# Ignore Python cache files
+__pycache__
+*.pyc
+
+# Ignore environment files
+.env
+
