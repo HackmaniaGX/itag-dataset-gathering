@@ -166,8 +166,11 @@ jupyter notebook
 > **Note**
 Update dataset paths if necessary to point to your local data folders.
 
+## Analysis Process 
 
-## Data Loading and Preprocessing
+Here we are trying to document the few high level steps involved in processing the data. 
+
+### Data Loading and Preprocessing
 
 ```bash
 import pandas as pd
@@ -184,38 +187,7 @@ transactions_df['FROMDATE'] = pd.to_datetime(transactions_df['FROMDATE'], errors
 transactions_df['TODATE'] = pd.to_datetime(transactions_df['TODATE'], errors='coerce')
 ```
 
-OR via Google Cloud Storage
-```python
-import os
-from google.cloud import storage
-import pandas as pd
-import io
-
-# Path to your service account key
-SERVICE_ACCOUNT_KEY_PATH = 'path/to/your/service-account-key.json'
-
-# Set environment variable for authentication
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = SERVICE_ACCOUNT_KEY_PATH
-
-# Initialize client
-client = storage.Client()
-bucket_name = 'your-gcs-bucket-name'
-bucket = client.bucket(bucket_name)
-
-def download_csv(blob_name):
-    """Download CSV file directly into a pandas DataFrame."""
-    blob = bucket.blob(blob_name)
-    content = blob.download_as_bytes()
-    return pd.read_csv(io.BytesIO(content))
-
-# Download datasets
-patients_df = download_csv('path/to/patients.csv')
-claims_df = download_csv('path/to/claims.csv')
-transactions_df = download_csv('path/to/claims_transactions.csv')
-providers_df = download_csv('path/to/providers.csv')
-```
-
-## Data Merging
+### Data Merging
 
 ```bash
     # Merge
@@ -223,10 +195,10 @@ providers_df = download_csv('path/to/providers.csv')
 ```
 
 
-## Exploratory Data Analysis (EDA)
+### Exploratory Data Analysis (EDA)
 
-### 1. Patients Demographics
-#### 1.1 Distribution of Gender
+#### 1. Patients Demographics
+##### 1.1 Distribution of Gender
 ```python
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -236,7 +208,7 @@ plt.title('Patient Gender Distribution')
 plt.show()
 ```
 
-#### 1.2 Age Calculation
+##### 1.2 Age Calculation
 ```python
 import datetime as dt
 today = dt.date.today()
@@ -245,7 +217,7 @@ sns.histplot(patients_df['AGE'], bins=20)
 plt.title('Patient Age Distribution')
 plt.show()
 ```
-#### 1.3 Claims Overview
+##### 1.3 Claims Overview
 
 ```python
 # Claim amount distribution
@@ -259,7 +231,7 @@ plt.title('Claims Over Time')
 plt.show()
 ```
 
-### 1.4 Provider Analysis
+#### 1.4 Provider Analysis
 
 ```python
 # Top providers by number of claims
@@ -270,23 +242,23 @@ plt.title('Top 10 Providers by Claim Count')
 plt.show()
 ```
 
-## Feature Engineering & Suspicious Pattern Detection
+### Feature Engineering & Suspicious Pattern Detection
 
 
-#### 1. Identify High-Value Claims
+##### 1. Identify High-Value Claims
 
 ```python
 high_claim_threshold = merged_df['AMOUNT'].quantile(0.99)
 suspicious_claims = merged_df[merged_df['AMOUNT'] > high_claim_threshold]
 ```
 
-#### 2. Detect Repetitive & Rapid Claims
+##### 2. Detect Repetitive & Rapid Claims
 ```python
 merged_df['DATE'] = merged_df['SERVICEDATE'].dt.date
 claims_per_provider_day = claims_df.groupby(['PROVIDERID', 'DATE']).size()
 suspicious_frequency = claims_per_provider_day[claims_per_provider_day > 10]
 ```
-#### 3. Anomaly Detection with Isolation Forest
+##### 3. Anomaly Detection with Isolation Forest
 
 ```python
 from sklearn.ensemble import IsolationForest
@@ -302,7 +274,7 @@ merged_df['anomaly_score'] = clf.fit_predict(features)
 # Filter suspected fraudulent claims
 suspects = merged_df[merged_df['anomaly_score'] == -1]
 ```
-### Visualization of Suspicious Activities
+#### Visualization of Suspicious Activities
 
 ```python
 import networkx as nx
@@ -318,7 +290,7 @@ plt.title('Suspected Provider-Patient Network')
 plt.show()
 ```
 
-## Concepts and Techniques Used
+### Concepts and Techniques Used
 
 > **Outlier Detection Techniques:**  Isolation Forests identify anomalies based on isolation in feature space.
 
@@ -330,7 +302,7 @@ plt.show()
 
 > **Network Analysis:** Exploring relationships between providers and patients.
 
-## Findings & Next Steps
+### Findings & Next Steps
 > High claim amounts and frequent claims flagged as potential fraud.
 
 > Outlier claims identified via anomaly detection.
@@ -339,7 +311,7 @@ plt.show()
 
 > Next steps include integrating supervised learning models with labeled data, refining feature sets, and developing dashboards for ongoing monitoring.
 
-## Final Notes
+### Final Notes
 > This analysis serves as an initial screening tool.
 
 > False positives are possible; manual review is essential.
@@ -347,7 +319,7 @@ plt.show()
 > Models should be continuously updated with new data and feedback.
 
 
-### References & Resources
+## References & Resources
 - **Synthea:** Synthetic Healthcare Data Generation
     - Main GitHub repo: https://github.com/synthetichealth/synthea
     - International extension: https://github.com/synthetichealth/synthea-international
@@ -356,10 +328,15 @@ plt.show()
 - See **README.md** on respective repo for for setup instructions.
 - Documentation & Code: Synthea documentation: https://github.com/synthetichealth/synthea/wiki
 
+## Authors & Acknowledgments
+- Nithin Mohan T K- [@nithinmohantk]
+- Inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data] (https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554) by Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar,
+Leilani Gilpin, John Guerra-Gomez and Daniel Davies - Palo Alto Research Center
+- Contributions from David Mullins, Anna Coyle & Dovile Janusauskaite 
 
-### License
+## License
 This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
 
-**© Neural Nexus Team** — All rights reserved.
+**© Neural Nexus Team** | Evernorth — All rights reserved.
 
 With love for healthcare data analysis and fraud detection.
