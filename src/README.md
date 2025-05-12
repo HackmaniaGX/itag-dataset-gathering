@@ -20,8 +20,9 @@ Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges wor
 - In Ireland, the Health Service Executive (HSE) estimates that **up to 10%** of healthcare expenditure may be attributable to fraud, waste, or abuse, translating into hundreds of millions of euros annually.
 - The **World Bank** reports that health sector fraud costs can account for **up to 3-5% of total health expenditures** in developed countries.
 
-**Why is detecting FWA important?**  
+### Why is detecting FWA important?
 Effective detection helps prevent financial losses, ensures equitable resource distribution, and maintains the integrity of healthcare systems. This project leverages data analysis and machine learning techniques to identify suspicious claims and activities in synthetic Irish healthcare data.
+
 ---
 
 ## Analysis & Techniques for FWA Detection
