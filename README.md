@@ -380,7 +380,7 @@ The following images illustrate the key findings from our analysis. These visual
 
 ![Network Suspicion Graph - Derived via Reserach Methods](results/network-suspecion-graph-01.png)
 ![Network Suspicion Graph - Derived via Custom Analysis - Primary Dataset](results/network-suspecion-graph-02.png)
-![Network Suspicion Graph - Derived via Analysis - Second Dataset](results/network-suspecion-graph-01.png)
+![Network Suspicion Graph - Derived via Analysis - Second Dataset](results/network-suspecion-graph-03.png)
 ![Plot](results/newplot.png)
 ![Plot1](results/newplot1.png)
 ![Plot2](results/newplot2.png)
@@ -397,6 +397,10 @@ The following images illustrate the key findings from our analysis. These visual
 - See **README.md** on respective repo for for setup instructions.
 - Documentation & Code: Synthea documentation: https://github.com/synthetichealth/synthea/wiki
 
+## AI-Enhanced Content Notice
+> **WARNING**
+Please note that some content in this repository, including explanations, summaries, and documentation, has been generated or enhanced using AI tools to improve clarity and detail. Users should review and validate these sections as needed.*
+
 ## Authors & Acknowledgments
 - Nithin Mohan T K- [@nithinmohantk](https://github.com/nithinmohantk)
 - Inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554) by <i>Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar,
@@ -408,4 +412,6 @@ This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENS
 
 **© Neural Nexus Team** | Evernorth — All rights reserved.
 
-With love for healthcare data analysis and fraud detection.
+> With love for healthcare data analysis and fraud detection.
+
+
