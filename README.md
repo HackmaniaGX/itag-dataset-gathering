@@ -70,9 +70,9 @@ Effective detection helps prevent financial losses, ensures equitable resource d
 ### 1. Understanding FWA Concepts
 | Concept | Explanation                              | Indicator                                 | Formula / Metric             | Interpretation                           |
 |---------|------------------------------------------|-------------------------------------------|------------------------------|------------------------------------------|
-| Fraud   | Intentional deception for financial gain | Claims with false info or staging         | False claims, identity theft | Excessive claims, suspicious patterns    |
-| Waste   | Overutilization or misuse of resources   | Excessive billing, unnecessary procedures | Cost per patient/provider    | High expenses with no added value        |
-| Abuse   | Improper billing practices               | Upcoding, unbundling services             | Billing codes misuse         | Discrepancies between services and codes |
+| **Fraud** ✅ | Intentional deception for financial gain | Claims with false info or staging        | False claims, identity theft | Excessive claims, suspicious patterns    |
+| Waste 🚫  | Overutilization or misuse of resources   | Excessive billing, unnecessary procedures | Cost per patient/provider    | High expenses with no added value        |
+| Abuse 🚫  | Improper billing practices               | Upcoding, unbundling services             | Billing codes misuse         | Discrepancies between services and codes |
 
 ### 2. Techniques & Code
 - **Outlier Detection** (e.g., Isolation Forest)
