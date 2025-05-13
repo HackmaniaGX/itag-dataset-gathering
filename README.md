@@ -29,6 +29,7 @@ This analysis aims to detect healthcare fraud by identifying suspicious claims, 
   - [Clone the Repo](#clone-the-repo)
   - [Set Up Environment](#set-up-environment)
   - [Running the Notebooks](#running-the-notebooks)
+  - [Running the Notebooks](#running-the-notebooks)
 - [Analysis Process](#analysis-process)
   - [Data Loading and Preprocessing](#data-loading-and-preprocessing)
   - [Data Merging](#data-merging)
@@ -231,14 +232,34 @@ jupyter notebook
 ```
 - Open the notebooks in the notebooks/ directory:
 
-- Initial Analysis: Use **healthcare_fwa_analysis.ipynb**
+- Initial Data Analysis & Visualizations: **healthcare_fwa_analysis.ipynb**
 
 - Graph-Based ML Analysis: **healthcare_fwa_graph_analysis.ipynb**
 
-- ML-based Detection Algorithm: Use **healthcare_fwa_opt2_analysis.ipynb*
+- ML-based Detection Algorithm: **healthcare_fwa_opt2_analysis.ipynb**
 
 > **Note**
 Update dataset paths if necessary to point to your local data folders.
+
+### OR - Running Notebooks on Google Cloud Vertex AI Workbench
+
+For a seamless experience and enhanced computational resources, we recommend running these notebooks within [Google Cloud Vertex AI Workbench](https://cloud.google.com/vertex-ai/docs/workbench). This managed environment simplifies setup, scales easily, and provides powerful GPUs/TPUs for large-scale data processing.
+
+#### Getting Started in Vertex AI Workbench
+
+1. **Create a Vertex AI Workbench Notebook Instance**: Follow the [Google Cloud documentation](https://cloud.google.com/vertex-ai/docs/workbench/use-notebooks) to set up a Managed Notebook environment.
+2. **Clone the Repository**: Use Git within the notebook to clone this repository or upload files directly.
+3. **Configure Environment**: Install necessary dependencies, either via `requirements.txt` or conda environments.
+4. **Open and Run Notebooks**: Launch the notebooks directly from the Vertex AI interface.
+
+#### Visual Guidance (Screenshots)
+*Below are some reference screenshots illustrating the setup process and interface:*
+
+![Vertex AI Home](results/gcp1.png)  
+*Fig 1: Vertex AI Workspace Dashboard*
+
+![Notebook Launch](results/gcp3.png)  
+*Fig 2: Opening and running notebooks within the environment*
 
 ## Analysis Process 
 
@@ -421,6 +442,12 @@ The following images illustrate the key findings from our analysis. These visual
 ![Diagram5](results/diagram5.png)
 
 
+
+![gcp1](results/gcp1.png)
+![gcp2](results/gcp2.png)
+![gcp3](results/gcp3.png)
+![gcp4](results/gcp4.png)
+![gcp5](results/gcp5.png)
 
 ## References & Resources
 - **Synthea:** Synthetic Healthcare Data Generation
