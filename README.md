@@ -33,7 +33,6 @@ Effective detection helps prevent financial losses, ensures equitable resource d
 | Waste   | Overutilization or misuse of resources   | Excessive billing, unnecessary procedures | Cost per patient/provider    | High expenses with no added value        |
 | Abuse   | Improper billing practices               | Upcoding, unbundling services             | Billing codes misuse         | Discrepancies between services and codes |
 
-
 ### 2. Techniques & Code
 - **Outlier Detection** (e.g., Isolation Forest)
     - **Purpose:** Automatically flag claims that deviate significantly from normal patterns.
@@ -43,6 +42,11 @@ Effective detection helps prevent financial losses, ensures equitable resource d
     - **Purpose:** Indicates potentially fraudulent claims with abnormally high charges.
 - **Visualization & Network Analysis**
     - **Purpose:** This reveals clusters of suspicious providers and patients.
+
+---
+### Solution Scope 
+
+This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
 
 
 ## Getting Started
@@ -304,15 +308,16 @@ plt.show()
 
 ### Concepts and Techniques Used
 
-> **Outlier Detection Techniques:**  Isolation Forests identify anomalies based on isolation in feature space.
+The analysis techniques implemented are specifically designed to identify fraudulent activities within healthcare claims:
 
-> **Feature Engineering:** Claim amounts, claim frequency, and temporal patterns.
+- **Suspicious Claim Amounts:** Flagging claims with abnormally high amounts or units that are unlikely to be legitimate.
+- **Unusual Claim Frequency:** Detecting providers or patients with an unusually high number of claims, indicating potential overutilization or collusive behavior.
+- **Suspicious Service Codes:** Identifying claims associated with known or potentially fraudulent procedure codes.
+- **Rapid Claim Submissions:** Highlighting providers submitting multiple claims within short timeframes, a pattern often associated with fraud rings.
+- **Anomaly Scores from Machine Learning:** Utilizing algorithms like Isolation Forest and Random Forest to detect claims that significantly deviate from standard patterns, flagging them as potential fraud cases.
+- **Network and Graph Analysis:** Revealing organized collusion or fraud rings by visualizing suspicious provider-patient relationships.
 
-> **Visualization:** Box plots, histograms, network graphs to visualize suspicious activity.
-
-> **Thresholding:** Using statistical thresholds (e.g., 99th percentile) to flag high claims.
-
-> **Network Analysis:** Exploring relationships between providers and patients.
+These methods collectively enhance the ability to detect, prioritize, and investigate fraudulent activities efficiently, helping to reduce financial losses and protect the integrity of healthcare systems.
 
 ### Findings & Next Steps
 > High claim amounts and frequent claims flagged as potential fraud.
@@ -341,10 +346,10 @@ plt.show()
 - Documentation & Code: Synthea documentation: https://github.com/synthetichealth/synthea/wiki
 
 ## Authors & Acknowledgments
-- Nithin Mohan T K- [@nithinmohantk]
-- Inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data] (https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554) by Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar,
-Leilani Gilpin, John Guerra-Gomez and Daniel Davies - Palo Alto Research Center
-- Contributions from David Mullins, Anna Coyle & Dovile Janusauskaite 
+- Nithin Mohan T K- [@nithinmohantk](https://github.com/nithinmohantk)
+- Inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554) by <i>Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar,
+Leilani Gilpin, John Guerra-Gomez and Daniel Davies - Palo Alto Research Center</i>
+- Contributions from Neural Nexus Team - [David Mullins](https://www.linkedin.com/in/david-mullins-93a624126/), [Anna Coyle](https://www.linkedin.com/in/coyleanna/), [Dovile Janusauskaite](https://www.linkedin.com/in/dovile-janusauskaite-13335b13/) & [Nithin Mohan](https://in.linkedin.com/in/nithinmohantk) 
 
 ## License
 This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
