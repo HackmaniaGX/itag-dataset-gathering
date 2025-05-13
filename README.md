@@ -48,7 +48,7 @@ This analysis aims to detect healthcare fraud by identifying suspicious claims, 
 
 This project aims to analyze healthcare claims data to identify potential Fraud, Waste, and Abuse (FWA) patterns. Using synthetic datasets generated via Synthea, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
 
-### About Fraud, Waste, and Abuse (FWA)
+### About Healthcare Fraud, Waste, and Abuse (FWA)
 Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges worldwide, leading to billions of euros in unnecessary costs annually. Specifically, in Ireland and across the European Union, healthcare systems are under increasing pressure to optimize resources while maintaining high standards of care.
 
 - **Fraud** involves intentional deception or misrepresentation for financial gain, such as falsifying claims or identities.
@@ -61,7 +61,7 @@ Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges wor
 - In Ireland, the Health Service Executive (HSE) estimates that **up to 10%** of healthcare expenditure may be attributable to fraud, waste, or abuse, translating into hundreds of millions of euros annually.
 - The **World Bank** reports that health sector fraud costs can account for **up to 3-5% of total health expenditures** in developed countries.
 
-### Why is detecting FWA important?
+### Why Detect FWA?
 Effective detection helps prevent financial losses, ensures equitable resource distribution, and maintains the integrity of healthcare systems. This project leverages data analysis and machine learning techniques to identify suspicious claims and activities in synthetic Irish healthcare data.
 
 ---
@@ -371,6 +371,18 @@ These methods collectively enhance the ability to detect, prioritize, and invest
 > False positives are possible; manual review is essential.
 
 > Models should be continuously updated with new data and feedback.
+
+## Results Summary
+The following images illustrate the key findings from our analysis. These visualizations highlight suspicious patterns, network interactions, outlier claims, and other relevant metrics identified during our investigation. The results demonstrate the effectiveness of our graph-based and machine learning approaches in flagging potential healthcare fraud. Review the images below to gain insights into the detected anomalies and the overall performance of our detection techniques.
+
+![Network Suspicion Graph - Derived via Reserach Methods](results/network-suspecion-graph-01.png)
+![Network Suspicion Graph - Derived via Custom Analysis - Primary Dataset](results/network-suspecion-graph-02.png)
+![Network Suspicion Graph - Derived via Analysis - Second Dataset](results/network-suspecion-graph-01.png)
+![Plot](results/newplot.png)
+![Plot1](results/newplot1.png)
+![Plot2](results/newplot2.png)
+![Plot3](results/newplot3.png)
+![Plot4](results/newplot4.png)
 
 
 ## References & Resources
