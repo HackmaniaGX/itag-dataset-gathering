@@ -55,7 +55,8 @@ Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges wor
 - **Waste** refers to overutilization or inefficient practices that increase costs without improving patient outcomes.
 - **Abuse** includes practices like upcoding, billing for services not rendered, or unbundling procedures to inflate charges.
 
-  The scope of this project is to focus on Fraudulent activity between healthcare actors. 
+> **Note:** 
+The scope of this project is to focus on Fraudulent activity between healthcare actors. 
 
 ### Statistics and Impact:
 
