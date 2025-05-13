@@ -1,7 +1,7 @@
 # Healthcare Fraud Detection Using Graph Analysis and AI
 
 > **Purpose:**
-This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud, waste, and abuse by leveraging **graph analysis** and **machine learning** techniques. 
+This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
 
 > **Solution Goal:**
 The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
