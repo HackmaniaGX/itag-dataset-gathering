@@ -47,7 +47,7 @@ This analysis aims to detect healthcare fraud by identifying suspicious claims, 
 
 ## Introduction
 
-This project aims to analyze healthcare claims data to identify potential Fraud, Waste, and Abuse (FWA) patterns. Using synthetic datasets generated via Synthea, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
+This project analyses healthcare claims data to identify potential Fraud patterns. Using synthetic datasets generated via Synthea, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
 
 ### About Healthcare Fraud, Waste, and Abuse (FWA)
 Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges worldwide, leading to billions of euros in unnecessary costs annually. Specifically, in Ireland and across the European Union, healthcare systems are under increasing pressure to optimize resources while maintaining high standards of care.
@@ -57,16 +57,15 @@ Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges wor
 - **Abuse** includes practices like upcoding, billing for services not rendered, or unbundling procedures to inflate charges.
 
 > **Note:** 
-The scope of this project is to focus on Fraudulent activity between healthcare actors. 
+The scope of this project is to focus on detecting fraudulent activity or suspicious relationships between healthcare actors such as providers, patients, pharmacies.  
 
-### Statistics and Impact:
+### Why does this matter?
 
 - According to the European Healthcare Fraud and Corruption Network (EHFCN), EU member states lose an estimated **€56 billion annually** due to healthcare fraud and abuse. [Source](https://www.ehfcn.eu/)
 - In Ireland, the Health Service Executive (HSE) estimates that **up to 10%** of healthcare expenditure may be attributable to fraud, waste, or abuse, translating into hundreds of millions of euros annually.
 - The **World Bank** reports that health sector fraud costs can account for **up to 3-5% of total health expenditures** in developed countries.
 
-### Why Detect FWA?
-Effective detection helps prevent financial losses, ensures equitable resource distribution, and maintains the integrity of healthcare systems. This project leverages data analysis and machine learning techniques to identify suspicious claims and activities in synthetic Irish healthcare data.
+Effective fraud detection helps prevent financial losses, addresses inefficiences and compliance risks  and rises in cost of care.   This project leverages data analysis and machine learning techniques to identify suspicious claims and activities in synthetic Irish healthcare data.
 
 ---
 
