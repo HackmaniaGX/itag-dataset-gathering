@@ -1,7 +1,14 @@
 # Healthcare Fraud Detection Using Graph Analysis and AI
 
-> **Note:**
-This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud, waste, and abuse by leveraging **graph analysis** and **machine learning** techniques. The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
+> **Purpose:**
+This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud, waste, and abuse by leveraging **graph analysis** and **machine learning** techniques. 
+
+> **Solution Goal:**
+The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
+
+> **Solution Scope:**
+This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
+
 
 # Table of Contents
 
@@ -78,10 +85,6 @@ Effective detection helps prevent financial losses, ensures equitable resource d
     - **Purpose:** This reveals clusters of suspicious providers and patients.
 
 ---
-### Solution Scope 
-
-This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
-
 
 ## Getting Started
 
