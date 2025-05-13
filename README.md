@@ -10,10 +10,10 @@ The goal is to improve detection accuracy, transparency, and investigation effic
 This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
 
 > **Summary of results**
-The results conclude the following can be identified during normal claims processing and can be integrated into business operations for further action.  
-- High claim amounts and frequent claims flagged as potential fraud.
-- Outlier claims identified via anomaly detection.
-- Network analysis reveals clusters of providers and patients with suspicious interactions.
+> The results conclude the following can be identified during normal claims processing and can be integrated into business operations for further action.  
+>  - High claim amounts and frequent claims flagged as potential fraud.
+>  - Outlier claims identified via anomaly detection.
+>  - Network analysis reveals clusters of providers and patients with suspicious interactions.
 
 # Table of Contents
 
