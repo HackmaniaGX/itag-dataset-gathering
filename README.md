@@ -50,12 +50,13 @@ Effective detection helps prevent financial losses, ensures equitable resource d
 ### Overview
 
 The repository includes three main notebooks:
-
+> **Note:** 
+All the below implementations uses machine learning algorithms and scikit-learn libraries to derive the analysis and conclusions. 
 - `healthcare_fwa_analysis.ipynb`  
-  Performs an initial analysis of healthcare claims data based on basic provider and patient network analysis.
+  This notebook outlines an analysis framework aimed at detecting and investigating Healthcare Fraud, Waste, and Abuse (FWA). Using a combination of statistical, geographic, and network-based visualizations, the goal is to identify suspicious patterns and outliers within healthcare claims data.
 
 - `healthcare_fwa_graph_analysis.ipynb`  
-  Implements a graph-based approach as described in relevant research papers.
+  Implements a graph-based ML approach based on inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data] (https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554), uses network analysis and fraud detection, the methodology focuses on modeling the healthcare claims data as a complex network of providers and patients using **networkx** and **plotly** library.
 
 - `healthcare_fwa_opt2_analysis.ipynb`  
   Utilizes machine learning techniques to detect suspicious claims indicative of fraud or abuse.
@@ -112,6 +113,17 @@ Each folder contains CSV files specific to a county. (for e.g: galway, limerick,
 > **Warning:**
 Using Synthea-generated synthetic datasets enables safe and flexible healthcare data analysis. However, it is crucial to understand and account for the inherent biases to ensure meaningful and responsible insights.
 
+### Libraries Used 
+
+| Library                         | Purpose                                                                 |
+|---------------------------------|-------------------------------------------------------------------------|
+| `scikit-learn` (sklearn)        | Provides machine learning algorithms like Random Forest, Isolation Forest, and tools for model evaluation and feature importance.  |
+| `pandas`                        | Handles data manipulation and analysis, such as creating dataframes and processing features.                |
+| `matplotlib` / `plt`          | Used for creating static visualizations like bar plots and ROC curves.               |
+| `seaborn` (sns)                 | Enhances matplotlib visualizations, especially for plotting feature importance and distributions.             |
+| `plotly.express`                | Creates interactive visualizations such as histograms, bar charts, and ROC curves.                |
+| `sklearn.inspection`            | Provides tools for model interpretability, including partial dependence plots.                 |
+| `numpy`                         | Supports numerical operations, such as sorting and handling arrays for visualizations.               |
 
 ### Prerequisites
 
