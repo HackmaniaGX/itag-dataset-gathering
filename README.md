@@ -173,8 +173,10 @@ Using Synthea-generated synthetic datasets enables safe and flexible healthcare 
 
 Ensure you have the following installed:
 - Google Cloud Platform account ( for using Vertex AI workbench to use these notebooks)
+- Git & Git LFS
 - Python 3.8+ environment (if running notebooks directly)
 - Basic familiarity with Jupyter Notebooks
+- Basic familiarity with Github and git commands
 
 #### Required Python packages:
 Install the following packages within jupyter notebooks or python code.
@@ -186,6 +188,22 @@ pip install pandas numpy matplotlib seaborn plotly scikit-learn
 ```bash
 git clone https://github.com/HackmaniaGX/neural-nexus-healthcare-fwa-analysis.git
 cd neural-nexus-healthcare-fwa-analysis
+```
+
+### Large Files and Git LFS
+
+This repository uses [Git Large File Storage (LFS)](https://git-lfs.github.com/) for managing large files such as datasets and models. When cloning this repository, ensure that you have Git LFS installed and initialized on your system to fetch these files properly.
+
+**To install Git LFS:**
+
+```bash
+# For most systems
+git lfs install
+```
+
+### After cloning the repository, run:
+```bash
+git lfs pull
 ```
 
 ### Set Up Environment
@@ -381,11 +399,27 @@ The following images illustrate the key findings from our analysis. These visual
 ![Network Suspicion Graph - Derived via Reserach Methods](results/network-suspecion-graph-01.png)
 ![Network Suspicion Graph - Derived via Custom Analysis - Primary Dataset](results/network-suspecion-graph-02.png)
 ![Network Suspicion Graph - Derived via Analysis - Second Dataset](results/network-suspecion-graph-03.png)
+![Network Suspicion Graph - Derived via Analysis - Second Dataset](results/network-suspecion-graph-04.png)
 ![Plot](results/newplot.png)
 ![Plot1](results/newplot1.png)
 ![Plot2](results/newplot2.png)
 ![Plot3](results/newplot3.png)
 ![Plot4](results/newplot4.png)
+
+![Patient1](results/pat1.png)
+![Patient2](results/pat2.png)
+![Patient3](results/pat3.png)
+![Patient4](results/pat4.png)
+![Patient5](results/pat5.png)
+
+
+![Claim1](results/claim1.png)
+![Diagram1](results/diagram1.png)
+![Diagram2](results/diagram2.png)
+![Diagram3](results/diagram3.png)
+![Diagram4](results/diagram4.png)
+![Diagram5](results/diagram5.png)
+
 
 
 ## References & Resources
