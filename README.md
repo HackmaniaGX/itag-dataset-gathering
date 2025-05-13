@@ -3,6 +3,40 @@
 > **Note:**
 This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud, waste, and abuse by leveraging **graph analysis** and **machine learning** techniques. The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
 
+# Table of Contents
+
+- [Introduction](#introduction)
+  - [About Healthcare Fraud, Waste, and Abuse (FWA)](#about-healthcare-fraud-waste-and-abuse-fwa)
+  - [Statistics and Impact](#statistics-and-impact)
+  - [Why Detect FWA?](#why-detect-fwa)
+- [Analysis & Techniques for FWA Detection](#analysis--techniques-for-fwa-detection)
+  - [Understanding FWA Concepts](#understanding-fwa-concepts)
+  - [Techniques & Code](#techniques--code)
+  - [Solution Scope](#solution-scope)
+- [Getting Started](#getting-started)
+  - [Overview](#overview)
+  - [Directory Structure](#directory-structure)
+  - [Datasets](#datasets)
+  - [Libraries Used](#libraries-used)
+  - [Prerequisites](#prerequisites)
+  - [Clone the Repo](#clone-the-repo)
+  - [Set Up Environment](#set-up-environment)
+  - [Running the Notebooks](#running-the-notebooks)
+- [Analysis Process](#analysis-process)
+  - [Data Loading and Preprocessing](#data-loading-and-preprocessing)
+  - [Data Merging](#data-merging)
+  - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
+    - [Patients Demographics](#patients-demographics)
+    - [Claims Overview](#claims-overview)
+    - [Provider Analysis](#provider-analysis)
+  - [Feature Engineering & Suspicious Pattern Detection](#feature-engineering--suspicious-pattern-detection)
+  - [Concepts and Techniques Used](#concepts-and-techniques-used)
+  - [Findings & Next Steps](#findings--next-steps)
+  - [Final Notes](#final-notes)
+- [References & Resources](#references--resources)
+- [Authors & Acknowledgments](#authors--acknowledgments)
+- [License](#license)
+
 ## Introduction
 
 This project aims to analyze healthcare claims data to identify potential Fraud, Waste, and Abuse (FWA) patterns. Using synthetic datasets generated via Synthea, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
