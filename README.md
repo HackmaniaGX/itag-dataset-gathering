@@ -17,10 +17,9 @@
 
 # 📚 Table of Contents
 
-- [Introduction](#introduction)
-  - [About Healthcare Fraud, Waste, and Abuse (FWA)](#about-healthcare-fraud-waste-and-abuse-fwa)
-  - [Statistics and Impact](#statistics-and-impact)
-  - [Why Detect FWA?](#why-detect-fwa)
+- [Introduction](#-introduction)
+  - [About Healthcare Fraud, Waste, and Abuse (FWA)](#-about-healthcare-fraud-waste-and-abuse-fwa)
+  - [Why Does this Matter?](#-why-does-this-matter)
 - [Analysis & Techniques for FWA Detection](#analysis--techniques-for-fwa-detection)
   - [Understanding FWA Concepts](#understanding-fwa-concepts)
   - [Techniques & Code](#techniques--code)
