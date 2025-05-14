@@ -89,9 +89,9 @@ Effective fraud detection helps prevent financial losses, addresses inefficienci
   - **Formula / Concept:** Isolation Forest isolates anomalies by randomly partitioning the data space. Fewer splits to isolate a point suggest an anomaly.  
   - **Interpretation:** Claims flagged as -1 are potential frauds or anomalies needing manual review.  
 - **Threshold-based Flagging:**  
-  - **Purpose:** Identifies claims exceeding set thresholds for amount or frequency.  
+  - **Purpose:** Identifies claims exceeding set thresholds for amount or frequency, that would require potential review.   
 - **Visualization & Network Analysis:**  
-  - **Purpose:** This reveals clusters of suspicious providers and patients.
+  - **Purpose:** This reveals clusters of suspicious providers and patients, that would require potential review.
 
 ---
 
