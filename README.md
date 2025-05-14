@@ -1,21 +1,21 @@
-# Healthcare Fraud Detection Using Graph Analysis and AI
+# 🕵️‍♀️ Healthcare Fraud Detection Using Graph Analysis and AI 🤖
 
-> **Purpose:**
-This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
+> **🎯 Purpose:**  
+> This repository contains our project for the **ITAG Atlantec Hackathon 2025** held in Galway. Our team (The Neural Nexus) developed an innovative approach to detect healthcare fraud by leveraging **graph analysis** and **machine learning** techniques. 
 
-> **Solution Goal:**
-The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
+> **🎯 Solution Goal:**  
+> The goal is to improve detection accuracy, transparency, and investigation efficiency in healthcare systems.
 
-> **Solution Scope:**
-This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
+> **🚦 Solution Scope:**  
+> This analysis aims to detect healthcare fraud by identifying suspicious claims, providers, and patient patterns. It employs machine learning models like Isolation Forest and Random Forest to flag anomalies, high claim volumes, and abnormal claim amounts. Network analysis visualizes potential collusion, while feature engineering highlights key indicators of fraudulent activity. The goal is to enable early detection of high-risk entities, streamline investigations, and improve fraud prevention efforts, ultimately safeguarding healthcare resources and ensuring system integrity.
 
-> **Summary of results**
-> The results conclude the following can be identified during normal claims processing and can be integrated into business operations for further action.  
->  - High claim amounts and frequent claims flagged as potential fraud.
->  - Outlier claims identified via anomaly detection.
->  - Network analysis reveals clusters of providers and patients with suspicious interactions.
+> **📊 Summary of results**  
+> The results conclude the following can be identified during normal claims processing and can be integrated into business operations for further action:  
+> - 💰 High claim amounts and frequent claims flagged as potential fraud.  
+> - 🔍 Outlier claims identified via anomaly detection.  
+> - 🌐 Network analysis reveals clusters of providers and patients with suspicious interactions.  
 
-# Table of Contents
+# 📚 Table of Contents
 
 - [Introduction](#introduction)
   - [About Healthcare Fraud, Waste, and Abuse (FWA)](#about-healthcare-fraud-waste-and-abuse-fwa)
@@ -50,70 +50,64 @@ This analysis aims to detect healthcare fraud by identifying suspicious claims, 
 - [Authors & Acknowledgments](#authors--acknowledgments)
 - [License](#license)
 
-## Introduction
+---
 
-This project analyses healthcare claims data to identify potential Fraud patterns. Using synthetic datasets generated via Synthea, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
+## 🌟 Introduction
 
-### About Healthcare Fraud, Waste, and Abuse (FWA)
+This project analyses healthcare claims data to identify potential **fraud** patterns. Using synthetic datasets generated via **Synthea**, we perform exploratory data analysis, feature engineering, anomaly detection, and visualization to uncover suspicious behaviors from patient, provider, and claims perspectives.
+
+### 🏥 About Healthcare Fraud, Waste, and Abuse (FWA)  
 Fraud, Waste, and Abuse (FWA) in healthcare represent significant challenges worldwide, leading to billions of euros in unnecessary costs annually. Specifically, in Ireland and across the European Union, healthcare systems are under increasing pressure to optimize resources while maintaining high standards of care.
 
-- **Fraud** involves intentional deception or misrepresentation for financial gain, such as falsifying claims or identities.
-- **Waste** refers to overutilization or inefficient practices that increase costs without improving patient outcomes.
+- **Fraud** involves intentional deception or misrepresentation for financial gain, such as falsifying claims or identities.  
+- **Waste** refers to overutilization or inefficient practices that increase costs without improving patient outcomes.  
 - **Abuse** includes practices like upcoding, billing for services not rendered, or unbundling procedures to inflate charges.
 
-> **Note:** 
-The scope of this project is to focus on detecting fraudulent activity or suspicious relationships between healthcare actors such as providers, patients, pharmacies.  
+> **Note:**  
+> The scope of this project is to focus on detecting fraudulent activity or suspicious relationships between healthcare actors such as providers, patients, pharmacies.  
 
-### Why does this matter?
+### 💡 Why does this matter?  
 
-- According to the European Healthcare Fraud and Corruption Network (EHFCN), EU member states lose an estimated **€56 billion annually** due to healthcare fraud and abuse. [Source](https://www.ehfcn.eu/)
-- In Ireland, the Health Service Executive (HSE) estimates that **up to 10%** of healthcare expenditure may be attributable to fraud, waste, or abuse, translating into hundreds of millions of euros annually.
-- The **World Bank** reports that health sector fraud costs can account for **up to 3-5% of total health expenditures** in developed countries.
+- According to the European Healthcare Fraud and Corruption Network (EHFCN), EU member states lose an estimated **€56 billion annually** due to healthcare fraud and abuse. [Source](https://www.ehfcn.eu/)  
+- In Ireland, the Health Service Executive (HSE) estimates that **up to 10%** of healthcare expenditure may be attributable to fraud, waste, or abuse, translating into hundreds of millions of euros annually.  
+- The **World Bank** reports that health sector fraud costs can account for **up to 3-5%** of total health expenditures in developed countries.
 
-Effective fraud detection helps prevent financial losses, addresses inefficiences and compliance risks  and rises in cost of care.   This project leverages data analysis and machine learning techniques to identify suspicious claims and activities in synthetic Irish healthcare data.
+Effective fraud detection helps prevent financial losses, addresses inefficiencies and compliance risks, and rises in the cost of care. This project leverages data analysis and machine learning techniques to identify suspicious claims and activities in synthetic Irish healthcare data.
 
 ---
 
-## Analysis & Techniques for FWA Detection
+## 🔬 Analysis & Techniques for FWA Detection
 ### 1. Understanding FWA Concepts
-| Concept | Explanation                              | Indicator                                 | Formula / Metric             | Interpretation                           |
+| Concept | Explanation | Indicator | Formula / Metric | Interpretation |
 |---------|------------------------------------------|-------------------------------------------|------------------------------|------------------------------------------|
-| **Fraud** ✅ | Intentional deception for financial gain | Claims with false info or staging        | False claims, identity theft | Excessive claims, suspicious patterns    |
-| Waste 🚫  | Overutilization or misuse of resources   | Excessive billing, unnecessary procedures | Cost per patient/provider    | High expenses with no added value        |
-| Abuse 🚫  | Improper billing practices               | Upcoding, unbundling services             | Billing codes misuse         | Discrepancies between services and codes |
+| **Fraud** ✅ | Intentional deception for financial gain | Claims with false info or staging | False claims, identity theft | Excessive claims, suspicious patterns |
+| **Waste** 🚫 | Overutilization or misuse of resources | Excessive billing, unnecessary procedures | Cost per patient/provider | High expenses with no added value |
+| **Abuse** 🚫 | Improper billing practices | Upcoding, unbundling | Billing codes misuse | Discrepancies between services and codes |
 
 ### 2. Techniques & Code
-- **Outlier Detection** (e.g., Isolation Forest)
-    - **Purpose:** Automatically flag claims that deviate significantly from normal patterns.
-    - **Formula / Concept:** Isolation Forest isolates anomalies by randomly partitioning the data space. Fewer splits to isolate a point suggest an anomaly.
-    - **Interpretation:** Claims flagged as -1 are potential frauds or anomalies needing manual review.
-- **Threshold-based Flagging** - High Claim Amounts:
-    - **Purpose:** Indicates potentially fraudulent claims with abnormally high charges.
-- **Visualization & Network Analysis**
-    - **Purpose:** This reveals clusters of suspicious providers and patients.
+- **Outlier Detection** (e.g., Isolation Forest)  
+  - **Purpose:** Automatically flag claims that deviate significantly from normal patterns.  
+  - **Formula / Concept:** Isolation Forest isolates anomalies by randomly partitioning the data space. Fewer splits to isolate a point suggest an anomaly.  
+  - **Interpretation:** Claims flagged as -1 are potential frauds or anomalies needing manual review.  
+- **Threshold-based Flagging:**  
+  - **Purpose:** Identifies claims exceeding set thresholds for amount or frequency.  
+- **Visualization & Network Analysis:**  
+  - **Purpose:** This reveals clusters of suspicious providers and patients.
 
 ---
 
-## Getting Started
+## 🏁 Getting Started
 
-### Overview
+### 📚 The Notebooks
 
-The repository includes three main notebooks:
-> **Note:** 
-All the below implementations uses machine learning algorithms and scikit-learn libraries to derive the analysis and conclusions. 
-- `healthcare_fwa_analysis.ipynb`  
-  This notebook outlines an analysis framework aimed at detecting and investigating Healthcare Fraud, Waste, and Abuse (FWA). Using a combination of statistical, geographic, and network-based visualizations, the goal is to identify suspicious patterns and outliers within healthcare claims data.
+The repository includes three main notebooks:  
+- `healthcare_fwa_analysis.ipynb` — General FWA analysis with visualizations.  
+- `healthcare_fwa_graph_analysis.ipynb` — Graph-based ML approach inspired by research papers.  
+- `healthcare_fwa_opt2_analysis.ipynb` — Machine learning to detect suspicious claims.
 
-- `healthcare_fwa_graph_analysis.ipynb`  
-  Implements a graph-based ML approach based on inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data] (https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554), uses network analysis and fraud detection, the methodology focuses on modeling the healthcare claims data as a complex network of providers and patients using **networkx** and **plotly** library.
-
-- `healthcare_fwa_opt2_analysis.ipynb`  
-  Utilizes machine learning techniques to detect suspicious claims indicative of fraud or abuse.
-
----
-
-Directory Structure
-```.
+### 🗂️ Directory Structure
+```plaintext
+.
 ├── notebooks/
 │   ├── healthcare_fwa_analysis.ipynb
 │   ├── healthcare_fwa_graph_analysis.ipynb
@@ -124,20 +118,23 @@ Directory Structure
 │           └── [county folders]
 ├── containers/
 │   ├── Dockerfile
-│   └── other container configs
+│   └── other configs
 ├── requirements.txt
 └── README.md
 ```
 
-### Datasets
+### 📊 Datasets
 This project utilizes a **synthetic healthcare dataset** generated through the **Synthea** tool. Synthea is an open-source simulator designed to produce realistic, anonymized patient records based on population models. This approach enables scalable and privacy-preserving research and analysis.
+
+> **INFO:**  
+> Due to limited and insufficient data available from HSE and broader European sources, we opted to use synthetic data generated via Synthea. This allows us to create a comprehensive, realistic dataset that includes diverse patient profiles, claims, and healthcare scenarios necessary for effective fraud detection analysis. Using synthetic data ensures data privacy, enables scalable testing, and provides the detailed information required to develop and validate robust fraud detection models in a controlled environment.
 
 #### Why Use Synthetic Data?
 
 - **Privacy & Confidentiality:** Synthetic data circumvents privacy concerns associated with real patient records.
 - **Controlled Environment:** Facilitates testing, experimentation, and validation without risking sensitive information.
-- **Customizability:** Data can be tailored to specific scenarios, demographic distributions, or rare conditions, enhancing research flexibility.
 - **Resource Efficiency:** Eliminates the need for complex data access procedures and compliance hurdles.
+- **Customizability:** Data can be tailored to specific scenarios, demographic distributions, or rare conditions, enhancing research flexibility.
 
 The datasets used include:
 
@@ -148,7 +145,7 @@ The datasets used include:
 
 The datasets are synthetically generated and stored in CSV format, providing a realistic basis for analysis.
 
-The datasets are stored in the following directory structure:
+The datasets are stored in the following directory structure (within the repo):
 
 ```
 data/
@@ -157,31 +154,34 @@ data/
         └── [county-specific folders]/
             └── *.csv
 ```
-Each folder contains CSV files specific to a county. (for e.g: galway, limerick, dublin, cork) 
+> Each folder contains CSV files specific to a county. (for e.g: galway, limerick, dublin, cork) 
 
 > **Warning:**
 Using Synthea-generated synthetic datasets enables safe and flexible healthcare data analysis. However, it is crucial to understand and account for the inherent biases to ensure meaningful and responsible insights.
 
-### Libraries Used 
+### Libraries Used 📚
 
-| Library                         | Purpose                                                                 |
-|---------------------------------|-------------------------------------------------------------------------|
-| `scikit-learn` (sklearn)        | Provides machine learning algorithms like Random Forest, Isolation Forest, and tools for model evaluation and feature importance.  |
-| `pandas`                        | Handles data manipulation and analysis, such as creating dataframes and processing features.                |
-| `matplotlib` / `plt`          | Used for creating static visualizations like bar plots and ROC curves.               |
-| `seaborn` (sns)                 | Enhances matplotlib visualizations, especially for plotting feature importance and distributions.             |
-| `plotly.express`                | Creates interactive visualizations such as histograms, bar charts, and ROC curves.                |
-| `sklearn.inspection`            | Provides tools for model interpretability, including partial dependence plots.                 |
-| `numpy`                         | Supports numerical operations, such as sorting and handling arrays for visualizations.               |
+| Library | Purpose |
+| -------- | ------- |
+| `scikit-learn` 🧠 | ML algorithms (Random Forest, Isolation Forest) + evaluation tools |
+| `pandas` 🐼 | Data handling & manipulation |
+| `matplotlib` / `plt` 🎨 | Static visualizations (charts, distributions) |
+| `seaborn` 📊 | Enhanced statistical plots (correlation, importance) |
+| `plotly.express` 🌐 | Interactive dashboards & visual analytics |
+| `sklearn.inspection` 🔍 | Model interpretability (partial dependence) |
+| `numpy` ⚙️ | Numerical operations & array management |
 
-### Prerequisites
+### Prerequisites ✅
 
 Ensure you have the following installed:
-- Google Cloud Platform account ( for using Vertex AI workbench to use these notebooks)
+- Python 3.8+ environment
 - Git & Git LFS
-- Python 3.8+ environment (if running notebooks directly)
-- Basic familiarity with Jupyter Notebooks
-- Basic familiarity with Github and git commands
+- Jupyter Notebook (or compatible IDE)
+- Packages from `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
 
 #### Required Python packages:
 Install the following packages within jupyter notebooks or python code.
@@ -189,13 +189,13 @@ Install the following packages within jupyter notebooks or python code.
 pip install pandas numpy matplotlib seaborn plotly scikit-learn
 ```
 
-### Clone the repo
+### Clone the repo 🛰️
 ```bash
 git clone https://github.com/HackmaniaGX/neural-nexus-healthcare-fwa-analysis.git
 cd neural-nexus-healthcare-fwa-analysis
 ```
 
-### Large Files and Git LFS
+### Large Files and Git LFS 📦
 
 This repository uses [Git Large File Storage (LFS)](https://git-lfs.github.com/) for managing large files such as datasets and models. When cloning this repository, ensure that you have Git LFS installed and initialized on your system to fetch these files properly.
 
@@ -211,8 +211,8 @@ git lfs install
 git lfs pull
 ```
 
-### Set Up Environment
-#### Using Docker
+### Set Up Environment ⚙️
+#### Using Docker 🐳
 To build and run the container:
 ```bash
 docker build -t healthcare-fwa .
@@ -228,7 +228,7 @@ Alternatively, set up a Python environment:
 pip install -r requirements.txt
 ```
 
-### Running the Notebooks
+### Run Notebooks 📒
 
 Launch Jupyter Notebook in project directory:
 ```bash
@@ -236,11 +236,11 @@ jupyter notebook
 ```
 - Open the notebooks in the notebooks/ directory:
 
-- Initial Data Analysis & Visualizations: **healthcare_fwa_analysis.ipynb**
+- Initial Data Analysis & Visualizations: `healthcare_fwa_analysis.ipynb`
 
-- Graph-Based ML Analysis: **healthcare_fwa_graph_analysis.ipynb**
+- Graph-Based ML Analysis: `healthcare_fwa_graph_analysis.ipynb`
 
-- ML-based Detection Algorithm: **healthcare_fwa_opt2_analysis.ipynb**
+- ML-based Detection Algorithm: `healthcare_fwa_opt2_analysis.ipynb`
 
 > **Note**
 Update dataset paths if necessary to point to your local data folders.
@@ -265,7 +265,7 @@ For a seamless experience and enhanced computational resources, we recommend run
 ![Notebook Launch](results/gcp3.png)  
 *Fig 2: Opening and running notebooks within the environment*
 
-## Analysis Process 
+## Analysis Workflow 🔍
 
 Here we are trying to document the few high level steps involved in processing the data. 
 
@@ -389,7 +389,7 @@ plt.title('Suspected Provider-Patient Network')
 plt.show()
 ```
 
-### Concepts and Techniques Used
+### 💡 Concepts and Techniques Used
 
 The analysis techniques implemented are specifically designed to identify fraudulent activities within healthcare claims:
 
@@ -402,7 +402,7 @@ The analysis techniques implemented are specifically designed to identify fraudu
 
 These methods collectively enhance the ability to detect, prioritize, and investigate fraudulent activities efficiently, helping to reduce financial losses and protect the integrity of healthcare systems.
 
-### Findings & Next Steps
+### 📝 Findings & Next Steps
 > High claim amounts and frequent claims flagged as potential fraud.
 
 > Outlier claims identified via anomaly detection.
@@ -411,14 +411,14 @@ These methods collectively enhance the ability to detect, prioritize, and invest
 
 > Next steps include integrating supervised learning models with labeled data, refining feature sets, and developing dashboards for ongoing monitoring.
 
-### Final Notes
+### 🎯 Final Notes
 > This analysis serves as an initial screening tool.
 
 > False positives are possible; manual review is essential.
 
 > Models should be continuously updated with new data and feedback.
 
-## Results Summary
+## 📸 Visual Summary
 The following images illustrate the key findings from our analysis. These visualizations highlight suspicious patterns, network interactions, outlier claims, and other relevant metrics identified during our investigation. The results demonstrate the effectiveness of our graph-based and machine learning approaches in flagging potential healthcare fraud. Review the images below to gain insights into the detected anomalies and the overall performance of our detection techniques.
 
 ![Network Suspicion Graph - Derived via Reserach Methods](results/network-suspecion-graph-01.png)
@@ -453,7 +453,7 @@ The following images illustrate the key findings from our analysis. These visual
 ![gcp4](results/gcp4.png)
 ![gcp5](results/gcp5.png)
 
-## References & Resources
+## 🔗 References & Resources
 - **Synthea:** Synthetic Healthcare Data Generation
     - Main GitHub repo: https://github.com/synthetichealth/synthea
     - International extension: https://github.com/synthetichealth/synthea-international
@@ -462,17 +462,17 @@ The following images illustrate the key findings from our analysis. These visual
 - See **README.md** on respective repo for for setup instructions.
 - Documentation & Code: Synthea documentation: https://github.com/synthetichealth/synthea/wiki
 
-## AI-Enhanced Content Notice
+## ⚠️ AI-Enhanced Content Notice
 > **WARNING**
 Please note that some content in this repository, including explanations, summaries, and documentation, has been generated or enhanced using AI tools to improve clarity and detail. Users should review and validate these sections as needed.*
 
-## Authors & Acknowledgments
+## 🙌 Authors & Acknowledgments
 - Nithin Mohan T K- [@nithinmohantk](https://github.com/nithinmohantk)
 - Inspiration from [Research Paper - Graph Analysis for Detecting Fraud, Waste, and Abuse in Healthcare Data](https://ojs.aaai.org/aimagazine/index.php/aimagazine/article/view/2630/2554) by <i>Juan Liu, Eric Bier, Aaron Wilson, Tomo Honda, Sricharan Kumar,
 Leilani Gilpin, John Guerra-Gomez and Daniel Davies - Palo Alto Research Center</i>
 - Contributions from Neural Nexus Team - [David Mullins](https://www.linkedin.com/in/david-mullins-93a624126/), [Anna Coyle](https://www.linkedin.com/in/coyleanna/), [Dovile Janusauskaite](https://www.linkedin.com/in/dovile-janusauskaite-13335b13/) & [Nithin Mohan](https://in.linkedin.com/in/nithinmohantk) 
 
-## License
+## 📜 License
 This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
 
 **© Neural Nexus Team** | Evernorth — All rights reserved.
