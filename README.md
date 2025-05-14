@@ -20,21 +20,21 @@
 - [Introduction](#-introduction)
   - [About Healthcare Fraud, Waste, and Abuse (FWA)](#-about-healthcare-fraud-waste-and-abuse-fwa)
   - [Why Does this Matter?](#-why-does-this-matter)
-- [Analysis & Techniques for FWA Detection](#analysis--techniques-for-fwa-detection)
-  - [Understanding FWA Concepts](#understanding-fwa-concepts)
-  - [Techniques & Code](#techniques--code)
+- [Analysis & Techniques for FWA Detection](#-analysis--techniques-for-fwa-detection)
+  - [Understanding FWA Concepts](#-understanding-fwa-concepts)
+  - [Techniques & Code](#-techniques--code)
   - [Solution Scope](#solution-scope)
-- [Getting Started](#getting-started)
-  - [Overview](#overview)
-  - [Directory Structure](#directory-structure)
-  - [Datasets](#datasets)
-  - [Libraries Used](#libraries-used)
-  - [Prerequisites](#prerequisites)
+- [Getting Started](#-getting-started)
+  - [The Notebooks](#-the-notebooks)
+  - [Directory Structure](#-directory-structure)
+  - [Datasets](#-datasets)
+  - [Libraries Used](#-libraries-used)
+  - [Prerequisites](#-prerequisites)
   - [Clone the Repo](#clone-the-repo)
   - [Set Up Environment](#set-up-environment)
-  - [Running the Notebooks](#running-the-notebooks)
-  - [Running the Notebooks](#running-the-notebooks)
-- [Analysis Process](#analysis-process)
+  - [Running the Notebooks](#-running-notebooks)
+  - [Running the Notebooks in GCP | Vertext AI](#running-the-notebooks)
+- [Analysis Workflow](#-analysis-process)
   - [Data Loading and Preprocessing](#data-loading-and-preprocessing)
   - [Data Merging](#data-merging)
   - [Exploratory Data Analysis (EDA)](#exploratory-data-analysis-eda)
@@ -45,9 +45,9 @@
   - [Concepts and Techniques Used](#concepts-and-techniques-used)
   - [Findings & Next Steps](#findings--next-steps)
   - [Final Notes](#final-notes)
-- [References & Resources](#references--resources)
-- [Authors & Acknowledgments](#authors--acknowledgments)
-- [License](#license)
+- [References & Resources](#-references--resources)
+- [Authors & Acknowledgments](#-authors--acknowledgments)
+- [License](#-license)
 
 ---
 
@@ -119,6 +119,7 @@ The repository includes three main notebooks:
 │   ├── Dockerfile
 │   └── other configs
 ├── requirements.txt
+├── LICENSE.md
 └── README.md
 ```
 
