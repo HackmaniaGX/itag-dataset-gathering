@@ -475,7 +475,7 @@ Leilani Gilpin, John Guerra-Gomez and Daniel Davies - Palo Alto Research Center<
 ## 📜 License
 This project is licensed under the PRIVATE & COPYRIGHTED License. See the LICENSE file for details.
 
-**© Neural Nexus Team** | Evernorth — All rights reserved.
+**© Neural Nexus Team** - All rights reserved.
 
 > With love for healthcare data analysis and fraud detection.
 
